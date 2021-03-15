@@ -1,8 +1,8 @@
 (function(){
 
   const inputRange = document.querySelectorAll('.radius input[type="range"]');
-  const boxRed = document.querySelector('.box');
-  const boxWhite = document.querySelector('.showCode p');
+  const box = document.querySelector('.box');
+  const showCode = document.querySelector('.showCode p');
 
   inputRange.forEach((item) => {
     item.addEventListener('click', (e) => {
@@ -14,23 +14,23 @@
 
     switch(range.name){
       case 'topLeft': 
-        boxRed.style.borderTopLeftRadius = percent+"%";
-        boxWhite.innerText = boxRed.getAttribute('style');
+        box.style.borderTopLeftRadius = percent+"%";
+        showCode.innerText = box.getAttribute('style');
       break;
 
       case 'bottomLeft': 
-        boxRed.style.borderBottomLeftRadius = percent+"%";
-        boxWhite.innerText = boxRed.getAttribute('style');
+        box.style.borderBottomLeftRadius = percent+"%";
+        showCode.innerText = box.getAttribute('style');
       break;
 
       case 'topRight': 
-        boxRed.style.borderTopRightRadius = percent+"%";
-        boxWhite.innerText = boxRed.getAttribute('style');
+        box.style.borderTopRightRadius = percent+"%";
+        showCode.innerText = box.getAttribute('style');
       break;
 
       case 'bottomRight': 
-        boxRed.style.borderBottomRightRadius = percent+"%";
-        boxWhite.innerText = boxRed.getAttribute('style');
+        box.style.borderBottomRightRadius = percent+"%";
+        showCode.innerText = box.getAttribute('style');
       break;
 
     }

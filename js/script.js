@@ -1,10 +1,12 @@
 (function(){
-  const inputRange = document.querySelectorAll('.radius input[type="range"]');
+
+  const inputRange = document.querySelectorAll('.radius input');
   const box = document.querySelector('.box');
   const showCode = document.querySelector('.showCode p');
+  const inputColor = document.querySelector('.color input');
 
   inputRange.forEach((item) => {
-    item.addEventListener('click', (e) => {
+    item.addEventListener('click', (e) => {      
         borderRadius(e.currentTarget, e.currentTarget.value);
     });
   });
@@ -33,4 +35,5 @@
       break;
     }
   }
+
 })();

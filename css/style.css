@@ -112,4 +112,9 @@ input[type=range]::-webkit-slider-thumb {
   margin-top: -6.5px;
 }
 
+/* INPUT TYPE COLOR */
 
+.color{
+  text-align: center;
+  margin-top: 5px;
+}

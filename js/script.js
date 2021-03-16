@@ -20,36 +20,25 @@
       case 'topLeft': 
         box.style.borderTopLeftRadius = percent+"%";
         showCode.innerText = box.getAttribute('style');
-        localStorage.setItem('rangeTopLeft', percent);
       break;
 
       case 'bottomLeft': 
         box.style.borderBottomLeftRadius = percent+"%";
         showCode.innerText = box.getAttribute('style');
-        localStorage.setItem('rangeBottomLeft', percent);
       break;
 
       case 'topRight': 
         box.style.borderTopRightRadius = percent+"%";
         showCode.innerText = box.getAttribute('style');
-        localStorage.setItem('rangeTopRight', percent);
       break;
 
       case 'bottomRight': 
         box.style.borderBottomRightRadius = percent+"%";
         showCode.innerText = box.getAttribute('style');
-        localStorage.setItem('rangeBottomRight', percent);       
       break;
-    }
-    
-    // SALVANDO NO LOCALSTORAGE
-
-    localStorage.setItem('border', box.getAttribute('style'));      
-  }
+    }  
    
-  // PUXANDO INFORMAÇÕES DO LOCALSTORAGE
-
-  box.style = localStorage.getItem('border');
+  }  
   
 })();
 

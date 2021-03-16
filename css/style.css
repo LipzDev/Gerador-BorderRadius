@@ -43,8 +43,8 @@ body {
   height: 500px;
   background: var(--cor-principal);
 
-  box-shadow: -4px -4px 7px rgb(71, 71, 71),
-    5px 5px 7px rgb(5, 5, 5);
+  box-shadow: -4px -4px 7px rgb(27, 27, 27),
+    5px 5px 7px rgb(0, 0, 0);
 }
 
 .showCode{

@@ -1,15 +1,18 @@
+// FUNÇÃO PARA MUDAR A FORMA DO QUADRADO
+
 (function(){
 
-  const inputRange = document.querySelectorAll('.radius input');
+  const inputRange = document.querySelectorAll('.radius input[type="range"]');
   const box = document.querySelector('.box');
   const showCode = document.querySelector('.showCode p');
-  const inputColor = document.querySelector('.color input');
 
   inputRange.forEach((item) => {
-    item.addEventListener('click', (e) => {      
+    item.addEventListener('click', (e) => {
         borderRadius(e.currentTarget, e.currentTarget.value);
     });
   });
+
+  // MUDA A BORDA
 
   function borderRadius(range, percent){
 
@@ -33,7 +36,24 @@
         box.style.borderBottomRightRadius = percent+"%";
         showCode.innerText = box.getAttribute('style');
       break;
+
     }
   }
+
+})();
+
+// FUNÇÃO PARA MUDAR A COR
+
+(function(){
+  const inputColor = document.querySelector('.radius input[type="color"]');
+
+  inputColor.addEventListener('input', function(item){
+    let getColor = item.currentTarget.value;
+    
+    document.querySelector(':root').style = `--cor-principal: ${getColor}`;
+
+  });
+
+
 
 })();

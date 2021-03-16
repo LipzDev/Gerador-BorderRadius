@@ -36,9 +36,10 @@
         box.style.borderBottomRightRadius = percent+"%";
         showCode.innerText = box.getAttribute('style');
       break;
-
     }
   }
+
+
 
 })();
 
@@ -48,12 +49,11 @@
   const inputColor = document.querySelector('.radius input[type="color"]');
 
   inputColor.addEventListener('input', function(item){
-    let getColor = item.currentTarget.value;
-    
+    let getColor = item.currentTarget.value;      
+    localStorage.setItem('color', getColor);
     document.querySelector(':root').style = `--cor-principal: ${getColor}`;
-
   });
 
-
-
+  document.querySelector(':root').style = `--cor-principal: ${localStorage.getItem('color')}`;
+  inputColor.value = localStorage.getItem('color');
 })();

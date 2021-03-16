@@ -1,5 +1,4 @@
 (function(){
-
   const inputRange = document.querySelectorAll('.radius input[type="range"]');
   const box = document.querySelector('.box');
   const showCode = document.querySelector('.showCode p');
@@ -32,8 +31,6 @@
         box.style.borderBottomRightRadius = percent+"%";
         showCode.innerText = box.getAttribute('style');
       break;
-
     }
   }
-
 })();

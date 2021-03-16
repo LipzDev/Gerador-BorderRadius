@@ -3,7 +3,7 @@
 (function(){
 
   const inputRange = document.querySelectorAll('.radius input[type="range"]');
-  const box = document.querySelector('.box');
+  let box = document.querySelector('.box');
   const showCode = document.querySelector('.showCode p');
 
   inputRange.forEach((item) => {
@@ -20,27 +20,37 @@
       case 'topLeft': 
         box.style.borderTopLeftRadius = percent+"%";
         showCode.innerText = box.getAttribute('style');
+        localStorage.setItem('rangeTopLeft', percent);
       break;
 
       case 'bottomLeft': 
         box.style.borderBottomLeftRadius = percent+"%";
         showCode.innerText = box.getAttribute('style');
+        localStorage.setItem('rangeBottomLeft', percent);
       break;
 
       case 'topRight': 
         box.style.borderTopRightRadius = percent+"%";
         showCode.innerText = box.getAttribute('style');
+        localStorage.setItem('rangeTopRight', percent);
       break;
 
       case 'bottomRight': 
         box.style.borderBottomRightRadius = percent+"%";
         showCode.innerText = box.getAttribute('style');
+        localStorage.setItem('rangeBottomRight', percent);       
       break;
     }
+    
+    // SALVANDO NO LOCALSTORAGE
+
+    localStorage.setItem('border', box.getAttribute('style'));      
   }
+   
+  // PUXANDO INFORMAÇÕES DO LOCALSTORAGE
 
-
-
+  box.style = localStorage.getItem('border');
+  
 })();
 
 // FUNÇÃO PARA MUDAR A COR
@@ -54,6 +64,9 @@
     document.querySelector(':root').style = `--cor-principal: ${getColor}`;
   });
 
-  document.querySelector(':root').style = `--cor-principal: ${localStorage.getItem('color')}`;
-  inputColor.value = localStorage.getItem('color');
+  if(localStorage.getItem('color') !== null){
+    document.querySelector(':root').style = `--cor-principal: ${localStorage.getItem('color')}`;
+    inputColor.value = localStorage.getItem('color');
+  }
+  
 })();
